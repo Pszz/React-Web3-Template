@@ -1,41 +1,72 @@
 {
+  "name": "nextjs-template",
+  "author": "Pszz",
+  "version": "1.0.0",
   "private": true,
+  "license": "",
   "scripts": {
-    "start": "umi dev",
-    "build": "umi build",
-    "postinstall": "umi generate tmp",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+    "dev": "next",
+    "turbo": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "prepare": "husky install",
+    "prettier": "prettier -c --write \"**/*\"",
+    "lint": "eslint ./src/**/*.{ts,tsx}",
+    "serve": "pm2 start npm --name 'nextjs-template' -- run start"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "eslint --ignore-path .gitignore --fix",
+      "prettier --ignore-path .gitignore --write"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "dependencies": {
-    "web3": "^1.6.1",
-    "@web3-react/core": "^6.1.9",
-    "@web3-react/injected-connector": "^6.0.7",
-    "react": "17.x",
-    "react-dom": "17.x",
-    "react-toastify": "^8.1.0",
-    "umi": "^3.5.20"
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.8",
+    "@web3modal/ethereum": "^2.3.0",
+    "@web3modal/react": "^2.3.0",
+    "ethers": "^5",
+    "next": "latest",
+    "nextjs-progressbar": "^0.0.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-toastify": "^9.1.1",
+    "wagmi": "^0.12.10"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@umijs/preset-react": "1.x",
-    "@umijs/test": "^3.5.20",
-    "lint-staged": "^10.0.7",
-    "prettier": "^2.2.0",
-    "typescript": "^4.1.2",
-    "yorkie": "^2.0.0"
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@next/eslint-plugin-next": "^12.3.1",
+    "@svgr/webpack": "^6.5.1",
+    "@types/node": "^14.6.0",
+    "@types/react": "^18.0.8",
+    "@types/react-copy-to-clipboard": "^5.0.2",
+    "@types/react-dom": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "babel-plugin-import": "^1.13.5",
+    "babel-plugin-inline-react-svg": "^2.0.1",
+    "eslint": "^8.14.0",
+    "eslint-config-next": "latest",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.2",
+    "npm-force-resolutions": "^0.0.10",
+    "prettier": "^2.6.2",
+    "typescript": "^4.8.4",
+    "url-loader": "^4.1.1"
   }
 }

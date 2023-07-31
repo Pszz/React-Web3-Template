@@ -1,55 +1,48 @@
-# web3-template
+# Nextjs Basic Template
 
-## Getting Started
+Used to quickly build NextJs web applications.
 
-Install dependencies,
+## Why Nextjs Basic Template?
+Because it keeps only the clean parts.
 
-```bash
-$ yarn
-```
+- What configurations are included?
 
-Start the dev server,
+1. `.github` 
 
-```bash
-$ yarn start
-```
+2. `.husky` 
+
+3. `.vscode` 
+
+4. `.prettierrc` 
+
+5. `.eslintrc` 
+
+6. `robots.txt`
+
+7. `sitemap.xml`
+<!-- 7. `Google analytics` [Need to configure `code`] -->
+
+8. `Alias path: @/*`
+
+9. `svg support`
+
+<!-- 10. `sentry` [Need to configure `SENTRY_DSN`] -->
+
+11. `Toast component`
+
+12. `favicon`    
 
 
 
 
-## Base Structure
-  - [x] React
-  
-  - [x] UMI
-  
-    - [x] Router
-    - [x] Redux
-    - [x] TypeScript
-    - [x] Less
-    - [ ] Mock
-    - [x] GitHooks
-    - [x] Prettier
-    - [x] favicon.ico
-    - [x] manifest
-    - [ ] media.js
-    - [x] animate.min.css
-    
-    
-- UI 框架[自选]
-  - Antd  
-  - Mui
-    
+- The following are not supported and need to be configured separately.
 
-  
-  
-- Packages
-  
-  ```json
-   {   
-   		"web3": "^1.6.1",
-      "@web3-react/core": "^6.1.9",
-      "@web3-react/injected-connector": "^6.0.7",
-    }
-  ```
-  
-  
+1. Web3 Configuration
+2. Graphql Configuration
+
+
+## How it works？
+Look the `scripts` of `package.json`
+
+
+
